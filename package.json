@@ -2,13 +2,16 @@
   "name": "vue-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "vue": "^2.5.22"
+  },
+  "devDependencies": {
+    "express": "^4.16.4"
   }
 }
