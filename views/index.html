@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lesson1</title>
+    <link rel="shortcut icon" sizes="96x96" href="https://cn.vuejs.org/images/icons/favicon-96x96.png" type="image/x-icon">
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background: crimson;
+        }
+        .box2 {
+            background: gold;
+        }
+        button,input[type="button"] {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +36,12 @@
         <div><input type="text" placeholder="姓名" v-model="user.name"></div>
         <div><input type="text" placeholder="年龄" v-model="user.age"></div>
         <div><input type="text" placeholder="性别" v-model="user.six"></div>
-        <div><input type="button" value="提交" @click="addUser"></div>
+        <div><input type="button" value="提交" @click.stop="addUser"></div>
+        <div class="box" v-show="show"></div>
+        <div class="box box2" v-show="!show"></div>
+        <button type="button" @click="toogleBox">切换</button>
+        <br>
+        <input type="text" v-model="text">
     </div>
     <script src="/node_modules/vue/dist/vue.js"></script>
     <script src="/js/index.js"></script>

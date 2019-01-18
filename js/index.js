@@ -28,7 +28,9 @@ const vm = new Vue({
             name: '',
             age: '',
             six: ''
-        }
+        },
+        show: true,
+        text: ''
     },
     mounted() {
         window.document.title = this.title;
@@ -49,6 +51,20 @@ const vm = new Vue({
         removeUser(index) {
             // console.log(index);
             this.users.splice(index, 1);
+        },
+        toogleBox() {
+            this.show = !this.show;
+        }
+    },
+    watch: {
+        text(newValue, oldValue) {
+            console.log(newValue)
+        },
+        user: {
+            handler(newValue, oldValue) {
+                console.log(newValue);
+            },
+            deep: true
         }
     },
 })
