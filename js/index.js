@@ -1,7 +1,9 @@
 new Vue({
     el: '#app',
     data: {
-        title: 'Hello Vue.js'
+        title: 'Hello Vue.js',
+        isActive: false,
+        boxHeight: 30
     },
     mounted() {
         window.document.title = this.title;
@@ -10,7 +12,12 @@ new Vue({
 
     },
     methods: {
-
+        toogleStyle() {
+            this.isActive = !this.isActive
+        },
+        addWidth() {
+            this.boxHeight += 10;
+        }
     },
     watch: {
 

@@ -13,12 +13,21 @@
             height: 300px;
             background: crimson;
         }
+
+        .box.active {
+            background: gold;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <div class="box"></div>
+        <div :class="['box', {active:isActive}]"></div>
+        <div>
+            <button type="button" @click.stop="toogleStyle">切换</button>
+            <button type="button" @click.stop="addWidth">增加</button>
+        </div>
+        <div class="box" :style="{height:boxHeight + 'px',background:'#000'}"></div>
     </div>
     <script src="/node_modules/vue/dist/vue.js"></script>
     <script src="/js/index.js"></script>
