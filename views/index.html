@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/public/css/index.css">
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <!-- <div :class="['box',{small:isOver}]" :style="{width:value*10 + 'px'}"></div>
+        <button type="button" @click.stop="toogle">切换</button>
+        <button type="button" @click.stop="addWidth">增加</button>
+        <button type="button" @click.stop="removeWidth">减小</button> -->
+        <input type="range" v-model="value">
+        <span>{{ value }}</span>
+        <div class="banner" :style="{opacity:value/100}"></div>
+    </div>
     <script src="/node_modules/vue/dist/vue.js"></script>
     <script src="/js/index.js"></script>
 </body>

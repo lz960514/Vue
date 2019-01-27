@@ -12,8 +12,15 @@ app.use('/js', express.static(path.resolve(__dirname, './js')))
 
 app.use('/public', express.static(path.resolve(__dirname, './public')))
 
-app.get('/', (req, res, next) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'))
-})
+const indexRouter = require('./routers/index')
 
-app.listen(port)
+app.use('/', indexRouter)
+
+// app.get('/', (req, res, next) => {
+//     res.sendFile(path.resolve(__dirname, './views/index.html'))
+// })
+
+app.listen(port, err => {
+    if (err) throw err;
+    console.log(`服务器启动于: http://localhost:${port}`);
+});
