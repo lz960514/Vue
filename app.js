@@ -17,6 +17,11 @@ app.get('/', (req, res, next) => {
     res.sendFile(file);
 });
 
+app.get('/template', (req, res, next) => {
+    const file = path.resolve(__dirname, './views/template.html');
+    res.sendFile(file);
+});
+
 app.listen(port, hostName, err => {
     if (err) throw err;
     console.log(`服务器启动于: http://${hostName}:${port}`);
